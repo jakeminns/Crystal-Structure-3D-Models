@@ -1,0 +1,64 @@
+loop_
+_cell_length_a     10.32073(5)
+_cell_length_b     10.32073(5)
+_cell_length_c     10.32073(5)
+_cell_angle_alpha  90.00000
+_cell_angle_beta   90.00000
+_cell_angle_gamma  90.00000
+_cell_volume 1099.338092
+loop_
+_magnetic_propagation_vector_seq_id
+_magnetic_propagation_vector_kxkykz
+Kv_1  '0,0,0'
+
+loop_
+_space_group_symop.magn_id
+_space_group_symop.magn_operation_xyz
+_space_group_symop.magn_operation_mxmymz
+1   x,y,z,+1  mx,my,mz
+
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+FE1_1     MFE3       0.00000       0.00000       0.00000  1.0000
+FE1_2     MFE3       0.50000       0.50000       0.00000  1.0000
+FE1_3     MFE3       0.50000       0.00000       0.50000  1.0000
+FE1_4     MFE3       0.00000       0.50000       0.50000  1.0000
+FE1_5     MFE3       0.75000       0.75000       0.00000  1.0000
+FE1_6     MFE3       0.25000       0.25000       0.00000  1.0000
+FE1_7     MFE3       0.25000       0.75000       0.50000  1.0000
+FE1_8     MFE3       0.75000       0.25000       0.50000  1.0000
+FE1_9     MFE3       0.75000       0.00000       0.75000  1.0000
+FE1_10    MFE3       0.25000       0.50000       0.75000  1.0000
+FE1_11    MFE3       0.25000       0.00000       0.25000  1.0000
+FE1_12    MFE3       0.75000       0.50000       0.25000  1.0000
+FE1_13    MFE3       0.00000       0.75000       0.75000  1.0000
+FE1_14    MFE3       0.50000       0.25000       0.75000  1.0000
+FE1_15    MFE3       0.50000       0.75000       0.25000  1.0000
+FE1_16    MFE3       0.00000       0.25000       0.25000  1.0000
+
+loop_
+_atom_site_moment_label
+_atom_site_moment_crystalaxis_x
+_atom_site_moment_crystalaxis_y
+_atom_site_moment_crystalaxis_z
+FE1_1          2.06168       2.06168       2.06168
+FE1_2          2.06168       2.06168       2.06168
+FE1_3          2.06168       2.06168       2.06168
+FE1_4          2.06168       2.06168       2.06168
+FE1_5         -2.06168      -2.06168       2.06168
+FE1_6         -2.06168      -2.06168       2.06168
+FE1_7         -2.06168      -2.06168       2.06168
+FE1_8         -2.06168      -2.06168       2.06168
+FE1_9         -2.06168       2.06168      -2.06168
+FE1_10        -2.06168       2.06168      -2.06168
+FE1_11        -2.06168       2.06168      -2.06168
+FE1_12        -2.06168       2.06168      -2.06168
+FE1_13         2.06168      -2.06168      -2.06168
+FE1_14         2.06168      -2.06168      -2.06168
+FE1_15         2.06168      -2.06168      -2.06168
+FE1_16         2.06168      -2.06168      -2.06168

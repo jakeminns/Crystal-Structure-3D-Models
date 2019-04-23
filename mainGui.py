@@ -287,6 +287,7 @@ class MainGui:
     def fillCifInfoEntries(self):
         
         cellParams = cifScad.buildLatticeParams(self.cifInfoTable)
+
         
         self.cellParamEntryText_a.set(cellParams[0])
         self.cellParamEntryText_b.set(cellParams[1])
@@ -374,7 +375,7 @@ class MainGui:
         scaler = self.modelScalerEntry.get()
         bondsOn = self.bondsOnVar.get()
         bondWidth = self.modelBondWidthEntry.get()
-        cifScad.buildOpenScad(self.cifInfoTable, cellParams,  scaler,sphereSize,bondsOn, bondWidth, boundaries, self.bondsList,True,scaler*10,10)
+        cifScad.buildOpenScad(self.cifInfoTable, cellParams,  scaler,sphereSize,bondsOn, bondWidth, boundaries, self.bondsList,False,scaler*10,10,[True,0.8,0.1,0.1])
         
     def loadCif(self):
         user = getpass.getuser()

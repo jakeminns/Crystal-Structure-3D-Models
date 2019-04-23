@@ -9,11 +9,42 @@ Created on Thu Oct 26 18:25:11 2017
 def buildLoopList(fileName):
     inputFile = open(fileName,'r')
     inputFile = inputFile.read()
+
+    lininputFilees = filter(lambda x: not x.isspace(), inputFile)
+
     fileLines = inputFile.split('\n')
     loopArray = []
-    
-    fileLines = list(filter(None, fileLines)) # fastest
-    
+    print(len(fileLines))
+
+    # look for new line ; pattern
+    i = 0
+    #loop through list
+    while i < len(fileLines):
+        print("siuf",fileLines[i])
+        #look for new line then ; character pattern
+        if fileLines[i] == '' and fileLines[i+1] == ';':
+            #find the enclosing ; character and join everything between
+            for x in range(i+2,len(fileLines)):
+                    print("loojs",fileLines[x],fileLines[x][0])
+                    if fileLines[x][0] == ';':
+
+                        print("FOund reset",i,x,''.join(fileLines[i+2:x+1]))
+                        if len(fileLines[x+1])== 1:
+                            fileLines[i:x+1] = [''.join(fileLines[i+2:x+1])]
+                        else:
+                            fileLines[x] = fileLines[x][1:]
+                            print(fileLines)
+                            fileLines[i:x] = [''.join(fileLines[i+2:x])]
+
+                        #restart looking through list for multiple newline
+                        i = 0
+                        break
+        i+=1
+
+
+    fileLines = ['loop_' if len(i) == 0 else i for i in fileLines]
+
+    print((fileLines))
     newLoop = False
     tempLoopItem = ""
     
@@ -25,7 +56,7 @@ def buildLoopList(fileName):
             if lineCount == numLines-1 and fileLines[lineCount]!="":
                 tempLoopItem = tempLoopItem + " " + fileLines[lineCount]
             newLoop = False
-            tempLoopItem = " ".join(tempLoopItem.split()) #Remove large whitespace and replace with single spce
+            tempLoopItem = " ".join(tempLoopItem.split()) #Remove large whitespace and replace with single space
             loopArray.append(tempLoopItem) #Append loop text to loop array
             tempLoopItem = ""
         #Check if line is comment
@@ -34,7 +65,7 @@ def buildLoopList(fileName):
         if fileLines[lineCount][len(str(fileLines[lineCount]))-len(str(fileLines[lineCount].lstrip()))] == '#': #Is first char in the string a comment character?
             lineCount +=1
             continue
-        if 'loop_' in fileLines[lineCount]: #Does the string contain the loop_ keyword?
+        if 'loop_' in fileLines[lineCount] or (len(str(fileLines[lineCount].lstrip())))==0: #Does the string contain the loop_ keyword?
             newLoop = True
             lineCount +=1
             continue
@@ -62,10 +93,13 @@ def buildInfoList(loopArray):
                         if items[x] == "'":
                             splitLoopArray.append(newItem)   
                             i = x
+                            print("newItem",newItem)
+
                             newItem =""
                             break
                         else:
                             newItem += items[x]
+
                 else:
                     if newItem != "":
                         splitLoopArray.append(newItem)
@@ -144,12 +178,16 @@ def createInfoTable(dataTable):
 def openFileBuildCifInfo(fileName):
     
     dataTable = buildLoopList(fileName) 
-
+    print("1",dataTable)
     dataTable = buildInfoList(dataTable)
+    print("2",dataTable)
 
     dataTable = sortInfoList(dataTable)
+    print("3",dataTable)
 
     dataTable = createInfoTable(dataTable)
+    print("4",dataTable)
+
     return dataTable
     
 def getCifInfo(infoLabel, dataTable):
